@@ -1,0 +1,132 @@
+@import "helpers/variables";
+@import "helpers/placeholders";
+// .submitted-results-container{
+//   display:none;
+// }
+
+html{
+  body{
+  background: $hex-gray;
+  }
+}
+#puppy-title {
+  text-transform: uppercase;
+  color:$hex-teal;
+  font-family:Rockwell;
+  font-weight: 700px;
+  font-size:32px;
+}
+
+#profile-image{
+background:$profile-image no-repeat center;
+background-size: contain;
+width:$width;
+height: $height;
+border-radius: 50%;
+margin:0 auto;
+}
+
+.edit-profile{
+  text-align: center;
+  a{
+    color: #4E4E4E;
+    font-weight: 600;
+    font-size: 14px;
+    font-family: Avenir Next;
+    text-transform: uppercase;
+  }
+}
+.container{
+  .puppy-profile-wrapper{
+    border-radius: 10px;
+    margin: 50px auto;
+    background-color:#fff;
+    padding: 35px;
+  }
+  .puppy-profile-wrapper-submitted{
+    background:$hex-teal;
+    padding: 35px;
+    border-radius: 10px;
+    margin: 50px auto;
+  }
+  #puppy-title-submitted{
+    color:#fff;
+    text-transform: uppercase;
+    font-family:Rockwell;
+    font-weight: 700px;
+    font-size:32px;
+  }
+  .title-line{
+    border-color: #AEAEAE;
+  }
+}
+label {
+  color: #4E4E4E;
+  font-weight: 600;
+  font-size: 16px;
+}
+input.form-control{
+  border-color:$hex-teal;
+  &:focus{
+    background: $hex-teal;
+    color:#fff;
+  }
+}
+.birthdate-label{
+  width: 100%;
+}
+  .form-date{
+    padding: 10px 19px;
+    border: solid 0.25px $hex-teal;
+    border-radius: 6px;
+    color: $hex-light-gray;
+    width: 32%;
+    &:focus-visible{
+      background: $hex-teal;
+      color:#fff;
+    }
+  }
+  .birthdate-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+input.radio.gender-radio {
+  appearance: none;
+  border: solid .5px $hex-teal;
+  padding: 8px;
+  margin: 0 5px;
+}
+
+input[type=checkbox]:checked {
+appearance: auto;
+} 
+.misc-form{
+  .misc-form-control{
+  border-color: $hex-teal;
+  resize: none;
+  min-height: 125px;
+  &::-webkit-input-placeholder {
+    color: $hex-light-gray;
+  }
+}
+}
+.form-group.button-group {
+  text-align: right;
+  .btn{
+    font-size:16px;
+    font-family: Avenir Next;
+    width: 130px;
+    height: 45px;
+  }
+  .cancel-btn{
+    color: gray;
+    border:solid 1px $hex-light-gray;
+  }
+  .submit-btn{
+    background-color: $hex-teal;
+  }
+}
