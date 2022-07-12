@@ -1,5 +1,14 @@
+p.display-result-results, .button-group .btn, .edit-profile a {
+  font-size: 16px;
+  font-family: Avenir Next;
+}
+
 html body {
   background: #D7D7D7;
+}
+
+.submitted-results-container {
+  display: none;
 }
 
 #puppy-title {
@@ -25,8 +34,6 @@ html body {
 .edit-profile a {
   color: #4E4E4E;
   font-weight: 600;
-  font-size: 14px;
-  font-family: Avenir Next;
   text-transform: uppercase;
 }
 
@@ -72,7 +79,7 @@ input.form-control:focus {
 }
 
 .form-date {
-  padding: 10px 19px;
+  padding: 10px 5px;
   border: solid 0.25px #32849B;
   border-radius: 6px;
   color: #AEAEAE;
@@ -90,14 +97,14 @@ input.form-control:focus {
   flex-wrap: wrap;
 }
 
-input.radio.gender-radio {
+#gender-container .gender-radio {
   appearance: none;
   border: solid 0.5px #32849B;
   padding: 8px;
   margin: 0 5px;
 }
 
-input[type=checkbox]:checked {
+input[type=radio]:checked {
   appearance: auto;
 }
 
@@ -110,21 +117,68 @@ input[type=checkbox]:checked {
   color: #AEAEAE;
 }
 
-.form-group.button-group {
-  text-align: right;
+.button-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
-.form-group.button-group .btn {
-  font-size: 16px;
-  font-family: Avenir Next;
+.button-group .btn {
   width: 130px;
   height: 45px;
+  margin: 0 5px;
 }
-.form-group.button-group .cancel-btn {
+.button-group .cancel-btn {
   color: gray;
   border: solid 1px #AEAEAE;
 }
-.form-group.button-group .submit-btn {
+.button-group .submit-btn {
   background-color: #32849B;
+}
+
+p.display-result-label {
+  color: #fff;
+  font-size: 16px;
+}
+
+p.display-result-results {
+  padding: 10px;
+  border-radius: 10px;
+  background: #fff;
+  color: #32849B;
+  font-weight: 600;
+}
+
+@media (max-width: 760px) {
+  .two-column-container.row {
+    display: block;
+  }
+  .container {
+    padding: 0;
+    max-width: 100%;
+  }
+  .container .title-line {
+    border-color: #3c3c3c;
+  }
+  .puppy-profile-wrapper {
+    text-align: left;
+  }
+  #puppy-title {
+    font-weight: bold;
+  }
+  #profile-image {
+    width: 250px;
+    height: 250px;
+  }
+  .col-4.image-col {
+    max-width: 100%;
+  }
+  .col-8.form-col {
+    max-width: 100%;
+  }
+  .button-group {
+    flex-direction: row;
+    justify-content: center;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -9,6 +9,9 @@ html{
   background: $hex-gray;
   }
 }
+.submitted-results-container{
+  display:none;
+}
 #puppy-title {
   text-transform: uppercase;
   color:$hex-teal;
@@ -20,8 +23,8 @@ html{
 #profile-image{
 background:$profile-image no-repeat center;
 background-size: contain;
-width:$width;
-height: $height;
+width:$width-small;
+height: $height-small;
 border-radius: 50%;
 margin:0 auto;
 }
@@ -29,10 +32,9 @@ margin:0 auto;
 .edit-profile{
   text-align: center;
   a{
+    @extend %form-defaults;
     color: #4E4E4E;
     font-weight: 600;
-    font-size: 14px;
-    font-family: Avenir Next;
     text-transform: uppercase;
   }
 }
@@ -40,7 +42,7 @@ margin:0 auto;
   .puppy-profile-wrapper{
     border-radius: 10px;
     margin: 50px auto;
-    background-color:#fff;
+    background-color:$hex-light-white;
     padding: 35px;
   }
   .puppy-profile-wrapper-submitted{
@@ -50,7 +52,7 @@ margin:0 auto;
     margin: 50px auto;
   }
   #puppy-title-submitted{
-    color:#fff;
+    color:$hex-light-white;
     text-transform: uppercase;
     font-family:Rockwell;
     font-weight: 700px;
@@ -69,21 +71,21 @@ input.form-control{
   border-color:$hex-teal;
   &:focus{
     background: $hex-teal;
-    color:#fff;
+    color:$hex-light-white;
   }
 }
 .birthdate-label{
   width: 100%;
 }
   .form-date{
-    padding: 10px 19px;
+    padding: 10px 5px;
     border: solid 0.25px $hex-teal;
     border-radius: 6px;
     color: $hex-light-gray;
     width: 32%;
     &:focus-visible{
       background: $hex-teal;
-      color:#fff;
+      color:$hex-light-white;
     }
   }
   .birthdate-container {
@@ -94,14 +96,16 @@ input.form-control{
 }
 
 
-input.radio.gender-radio {
+#gender-container{
+  .gender-radio {
   appearance: none;
   border: solid .5px $hex-teal;
   padding: 8px;
   margin: 0 5px;
 }
+}
 
-input[type=checkbox]:checked {
+input[type=radio]:checked {
 appearance: auto;
 } 
 .misc-form{
@@ -114,13 +118,15 @@ appearance: auto;
   }
 }
 }
-.form-group.button-group {
-  text-align: right;
+.button-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
   .btn{
-    font-size:16px;
-    font-family: Avenir Next;
+    @extend %form-defaults;
     width: 130px;
     height: 45px;
+    margin:0 5px;
   }
   .cancel-btn{
     color: gray;
@@ -129,4 +135,52 @@ appearance: auto;
   .submit-btn{
     background-color: $hex-teal;
   }
+}
+p.display-result-label {
+  color: $hex-light-white;
+  font-size: 16px;
+}
+
+p.display-result-results {
+  @extend %form-defaults;
+  padding: 10px;
+  border-radius: 10px;
+  background: $hex-light-white;
+  color: $hex-teal;
+  font-weight: 600;
+}
+
+@media (max-width: $layout-width) {
+  .two-column-container.row {
+    display: block;
+}
+
+.container {
+    padding: 0;
+    max-width:100%;
+}
+.container .title-line {
+  border-color: #3c3c3c;
+}
+.puppy-profile-wrapper {
+    text-align: left;
+}
+#puppy-title {
+    font-weight: bold;
+}
+#profile-image{
+  width:$width-large;
+  height: $height-large;
+  }
+.col-4.image-col {
+    max-width: 100%;
+}
+
+.col-8.form-col {
+    max-width: 100%;
+}
+.button-group {
+  flex-direction: row;
+  justify-content: center;
+}
 }
