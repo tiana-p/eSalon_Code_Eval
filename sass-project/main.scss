@@ -1,8 +1,5 @@
 @import "helpers/variables";
 @import "helpers/placeholders";
-// .submitted-results-container{
-//   display:none;
-// }
 
 html{
   body{
@@ -75,7 +72,7 @@ input.form-control{
   }
 }
 .birthdate-label{
-  width: 100%;
+  width: $width-large-max;
 }
   .form-date{
     padding: 10px 5px;
@@ -94,8 +91,6 @@ input.form-control{
     justify-content: space-between;
     flex-wrap: wrap;
 }
-
-
 #gender-container{
   .gender-radio {
   appearance: none;
@@ -154,10 +149,9 @@ p.display-result-results {
   .two-column-container.row {
     display: block;
 }
-
 .container {
     padding: 0;
-    max-width:100%;
+    max-width:$width-large-max;
 }
 .container .title-line {
   border-color: #3c3c3c;
@@ -173,11 +167,11 @@ p.display-result-results {
   height: $height-large;
   }
 .col-4.image-col {
-    max-width: 100%;
+    max-width: $width-large-max;
 }
 
 .col-8.form-col {
-    max-width: 100%;
+    max-width: $width-large-max;
 }
 .button-group {
   flex-direction: row;
