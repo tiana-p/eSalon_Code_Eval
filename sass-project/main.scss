@@ -1,139 +1,137 @@
 @import "helpers/variables";
 @import "helpers/placeholders";
 
-html{
-  body{
-  background: $hex-gray;
+html {
+  body {
+    background: $hex-gray;
   }
 }
-.submitted-results-container{
-  display:none;
-}
-#puppy-title {
-  text-transform: uppercase;
-  color:$hex-teal;
-  font-family:Rockwell;
-  font-weight: 700px;
-  font-size:32px;
+// This will show up once the form is submitted
+.submitted-results-container {
+  display: none;
 }
 
-#profile-image{
-background:$profile-image no-repeat center;
-background-size: contain;
-width:$width-small;
-height: $height-small;
-border-radius: 50%;
-margin:0 auto;
+.container {
+  .puppy-profile-wrapper {
+    @extend %wrapper-default;
+    background-color: $hex-light-white;
+  }
+  .title-line {
+    border-color: #aeaeae;
+  }
+  #puppy-title {
+    @extend %titles;
+    color: $hex-teal;
+  }
+  #profile-image {
+    background: $profile-image no-repeat center;
+    background-size: contain;
+    width: $width-small;
+    height: $height-small;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+  .edit-profile {
+    text-align: center;
+    a {
+      @extend %form-defaults;
+      color: #4e4e4e;
+      font-weight: $font-weight;
+      text-transform: uppercase;
+    }
+  }
+}
+#form-form {
+  .form-group {
+    label {
+      color: #4e4e4e;
+      font-weight: $font-weight;
+      font-size: 16px;
+    }
+  }
+  .form-control {
+    border-color: $hex-teal;
+    &:focus {
+      background: $hex-teal;
+      color: $hex-light-white;
+    }
+  }
 }
 
-.edit-profile{
-  text-align: center;
-  a{
-    @extend %form-defaults;
-    color: #4E4E4E;
-    font-weight: 600;
-    text-transform: uppercase;
+.birthdate-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .birthdate-label {
+    width: $width-large-max;
   }
-}
-.container{
-  .puppy-profile-wrapper{
-    border-radius: 10px;
-    margin: 50px auto;
-    background-color:$hex-light-white;
-    padding: 35px;
-  }
-  .puppy-profile-wrapper-submitted{
-    background:$hex-teal;
-    padding: 35px;
-    border-radius: 10px;
-    margin: 50px auto;
-  }
-  #puppy-title-submitted{
-    color:$hex-light-white;
-    text-transform: uppercase;
-    font-family:Rockwell;
-    font-weight: 700px;
-    font-size:32px;
-  }
-  .title-line{
-    border-color: #AEAEAE;
-  }
-}
-label {
-  color: #4E4E4E;
-  font-weight: 600;
-  font-size: 16px;
-}
-input.form-control{
-  border-color:$hex-teal;
-  &:focus{
-    background: $hex-teal;
-    color:$hex-light-white;
-  }
-}
-.birthdate-label{
-  width: $width-large-max;
-}
-  .form-date{
+  .form-date {
     padding: 10px 5px;
     border: solid 0.25px $hex-teal;
     border-radius: 6px;
     color: $hex-light-gray;
     width: 32%;
-    &:focus-visible{
+    &:focus-visible {
       background: $hex-teal;
-      color:$hex-light-white;
+      color: $hex-light-white;
     }
   }
-  .birthdate-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
 }
-#gender-container{
+#gender-container {
   .gender-radio {
-  appearance: none;
-  border: solid .5px $hex-teal;
-  padding: 8px;
-  margin: 0 5px;
-}
-}
-
-input[type=radio]:checked {
-appearance: auto;
-} 
-.misc-form{
-  .misc-form-control{
-  border-color: $hex-teal;
-  resize: none;
-  min-height: 125px;
-  &::-webkit-input-placeholder {
-    color: $hex-light-gray;
+    appearance: none;
+    border: solid 0.5px $hex-teal;
+    padding: 8px;
+    margin: 0 5px;
+    &:checked {
+      appearance: auto;
+      content: "\2713";
+    }
   }
 }
+.misc-form {
+  .misc-form-control {
+    border-color: $hex-teal;
+    resize: none;
+    min-height: 125px;
+    &::-webkit-input-placeholder {
+      color: $hex-light-gray;
+    }
+  }
 }
 .button-group {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  .btn{
+  .btn {
     @extend %form-defaults;
     width: 130px;
     height: 45px;
-    margin:0 5px;
+    margin: 0 5px;
   }
-  .cancel-btn{
+  .cancel-btn {
     color: gray;
-    border:solid 1px $hex-light-gray;
+    border: solid 1px $hex-light-gray;
   }
-  .submit-btn{
+  .submit-btn {
     background-color: $hex-teal;
   }
 }
+#puppy-title-submitted {
+  @extend %titles;
+  color: $hex-light-white;
+}
+
+.puppy-profile-wrapper-submitted {
+  @extend %wrapper-default;
+  background: $hex-teal;
+}
+
 p.display-result-label {
   color: $hex-light-white;
   font-size: 16px;
+  font-weight: $font-weight;
 }
 
 p.display-result-results {
@@ -142,39 +140,50 @@ p.display-result-results {
   border-radius: 10px;
   background: $hex-light-white;
   color: $hex-teal;
-  font-weight: 600;
+  font-weight: 400;
+  font-size: 24px;
 }
-
+#results-misc {
+  min-height: 100px;
+}
+#results-gender {
+  width: 100px;
+  text-align: center;
+  margin-left: 10px;
+}
+#gender-result-container {
+  display: flex;
+  align-items: baseline;
+}
 @media (max-width: $layout-width) {
   .two-column-container.row {
     display: block;
-}
-.container {
-    padding: 0;
-    max-width:$width-large-max;
-}
-.container .title-line {
-  border-color: #3c3c3c;
-}
-.puppy-profile-wrapper {
-    text-align: left;
-}
-#puppy-title {
-    font-weight: bold;
-}
-#profile-image{
-  width:$width-large;
-  height: $height-large;
   }
-.col-4.image-col {
+  .container {
+    padding: 0;
     max-width: $width-large-max;
-}
-
-.col-8.form-col {
+    .title-line {
+      border-color: #3c3c3c;
+    }
+  }
+  .puppy-profile-wrapper {
+    text-align: left;
+  }
+  #puppy-title {
+    font-weight: bold;
+  }
+  #profile-image {
+    width: $width-large;
+    height: $height-large;
+  }
+  .image-col {
     max-width: $width-large-max;
-}
-.button-group {
-  flex-direction: row;
-  justify-content: center;
-}
+  }
+  .form-col {
+    max-width: $width-large-max;
+  }
+  .button-group {
+    flex-direction: row;
+    justify-content: center;
+  }
 }
